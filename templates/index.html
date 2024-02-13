@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RTSP Video Streaming</title>
+  </head>
+  <body>
+    <h1>RTSP Video Streaming</h1>
+    <!-- <iframe
+      src="{{ url_for('video_feed') }}"
+      width="640"
+      height="360"
+      frameborder="0"
+    ></iframe> -->
+    <video
+      id="videoPlayer"
+      width="640"
+      height="360"
+      controls
+      autoplay
+      onplay="handlePlay()"
+      onpause="handlePause()"
+    >
+      Your browser does not support the video tag.
+      <!-- <source src="{{ url_for('video_feed') }}" type="video/webm" />
+      <source src="{{ url_for('video_feed') }}" type="video/ogg" /> -->
+      <source src="static/video.mp4" type="video/mp4" />
+    </video>
+    <script>
+      // Get the video element
+      const videoPlayer = document.getElementById("videoPlayer");
+
+      // Function to handle play event
+      function handlePlay() {
+        console.log("Video is playing");
+      }
+
+      // Function to handle pause event
+      function handlePause() {
+        console.log("Video is paused");
+      }
+    </script>
+    <!-- <video
+      id="videoPlayer"
+      controls autoplay
+      style="width: 680px; height: 420px"
+    >
+      <source src="{{ url_for('video_feed') }}" type="application/x-rtsp" />
+    </video> -->
+    <!-- <img
+      style="width: 680px; height: 420px"
+      src="{{ url_for('video_feed') }}"
+      alt="Video Stream"
+    /> -->
+  </body>
+</html>
